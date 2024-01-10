@@ -1,0 +1,25 @@
+{
+  "name": "angularjs",
+  "version": "1.0.0",
+  "description": "AngularJS project for learning purpose",
+  "main": "src/index.ts",
+  "scripts": {
+    "compile": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angularjs",
+    "learning"
+  ],
+  "author": "Siva Chegondi",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.23.7",
+    "@babel/preset-typescript": "^7.23.3",
+    "babel-loader": "^9.1.3",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
