@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: finhamper
+spec:
+  replicas: {{ .Values.defaultReplicaCount }}
+  selector:
+    matchLabels:
+      app: finhamper
+  template:
+    metadata:
+      labels:
+        app: finhamper
+    spec:
+      containers:
+      - name: finhamper
+        image: finhamper
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "125m"
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: {{ .Values.finhamperTargetPort }}

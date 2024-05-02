@@ -1,0 +1,34 @@
+# installing kong/ingress and kong
+
+# ingressController settings
+ingressController:
+  enabled: true
+  gatewayDiscovery:
+    enabled: true
+    generateAdminApiService: true
+
+# Gateway settings
+gateway:
+  admin:
+    type: NodePort
+    enabled: true
+    http:
+      enabled: true
+      nodePort: 30010
+  env:
+    database: "off"
+  nodeSelector:
+    app: kong
+  proxy:
+    type: NodePort
+    http:
+      nodePort: 30007
+  manager:
+    type: ClusterIP
+    enabled: true
+    tls:
+      enabled: false
+    ingress:
+      path: /
+      enabled: true
+      
