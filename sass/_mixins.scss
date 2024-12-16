@@ -1,0 +1,9 @@
+@mixin test {
+    @media all and (min-width: 1000px) {
+        @content;
+    }
+
+    #{if(&, '&[light-theme]', '[light-theme]')} { 
+        @content;
+    }
+}

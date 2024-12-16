@@ -1,0 +1,22 @@
+body {
+  color: white;
+}
+@media all and (min-width: 1000px) {
+  body {
+    color: black;
+  }
+}
+body[light-theme] {
+  color: black;
+}
+
+@media all and (min-width: 1000px) {
+  .test {
+    background-color: aliceblue;
+  }
+}
+[light-theme] .test {
+  background-color: aliceblue;
+}
+
+/*# sourceMappingURL=output.css.map */

@@ -2,18 +2,25 @@ package mediums
 
 import "fmt"
 
-type User struct {
+// User interface to handle user actions
+type User interface {
+	Describe()
+}
+
+type user struct {
 	name    string
 	address string
 }
 
-func (user *User) Describe() {
-	fmt.Printf("User %s from %s\n", user.name, user.address)
+// Describe method to print details of user object
+func (usr *user) Describe() {
+	fmt.Printf("user %s from %s\n", usr.name, usr.address)
 }
 
-func SetUsers() (student, teacher, principal *User) {
-	student = &User{name: "siva", address: "banglore"}
-	teacher = &User{name: "vishnu", address: "hyderabad"}
-	principal = &User{name: "brahmi", address: "vellore"}
+// SetUsers method to initialize the user structs
+func SetUsers() (student, teacher, principal User) {
+	student = &user{name: "siva", address: "banglore"}
+	teacher = &user{name: "vishnu", address: "hyderabad"}
+	principal = &user{name: "brahmi", address: "vellore"}
 	return
 }
