@@ -14,7 +14,7 @@ package mediums
  */
 
 // SumGeneric generic function to add given array
-func SumGeneric[V int64 | float64](data []V) V {
+func SumGeneric[V int64 | int32 | float64](data []V) V {
 	var value V = 0
 	for _, v := range data {
 		value += v

@@ -30,6 +30,7 @@ func main() {
 		wholeNumbers[i] = int32(i)
 	}
 	fmt.Println("Generics Example Usage\nFor more details go the mediums package generics.go file")
+	fmt.Printf("\nAddition of whole numbers: %v\n", mediums.SumGeneric(wholeNumbers))
 	fmt.Printf("\nMultiplication of whole numbers: %v\n", mediums.MultiplyGeneric(wholeNumbers))
 	fmt.Println(divider)
 }
