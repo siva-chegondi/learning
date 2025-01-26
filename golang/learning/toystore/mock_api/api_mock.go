@@ -12,6 +12,7 @@ package mock_api
 import (
 	reflect "reflect"
 
+	api "github.com/siva-chegondi/learning/golang/learning/toystore/api"
 	gomock "go.uber.org/mock/gomock"
 )
 
@@ -51,4 +52,18 @@ func (m *MockStoreAPI) BuyToy(toyId, userId int) error {
 func (mr *MockStoreAPIMockRecorder) BuyToy(toyId, userId any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BuyToy", reflect.TypeOf((*MockStoreAPI)(nil).BuyToy), toyId, userId)
+}
+
+// GenerateAndSendInvoice mocks base method.
+func (m *MockStoreAPI) GenerateAndSendInvoice(order api.PurchaseRecord) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "GenerateAndSendInvoice", order)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// GenerateAndSendInvoice indicates an expected call of GenerateAndSendInvoice.
+func (mr *MockStoreAPIMockRecorder) GenerateAndSendInvoice(order any) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GenerateAndSendInvoice", reflect.TypeOf((*MockStoreAPI)(nil).GenerateAndSendInvoice), order)
 }
