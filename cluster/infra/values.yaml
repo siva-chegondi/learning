@@ -1,0 +1,6 @@
+# installing kong/ingress and kong
+
+# we will enable kong as dependency
+# once the issue with dep CRDs is resolved
+kong:
+  enabled: false

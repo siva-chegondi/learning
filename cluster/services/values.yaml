@@ -1,0 +1,23 @@
+# These values are default values
+# for the services deploying
+
+services:
+  gauth:
+    replicas: 1
+    imagePullPolicy: IfNotPresent
+    name: gauth
+    port: 80
+  proximity:
+    replicas: 1
+    imagePullPolicy: IfNotPresent
+    name: proximity
+    port: 80
+  payment:
+    replicas: 2
+    imagePullPolicy: IfNotPresent
+    name: payment
+    port: 80
+
+gateway:
+  name: kong
+  class: kong

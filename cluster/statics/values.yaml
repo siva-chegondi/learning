@@ -1,0 +1,21 @@
+# Default replica count
+defaultReplicaCount: 1
+
+# application service ports
+finhamperServicePort: 8080
+jokrhatServicePort: 3030
+swaggerServicePort: 8087
+
+# application target ports
+finhamperTargetPort: 80
+jokrhatTargetPort: 80
+swaggerTargetPort: 8080
+
+# Kong ingress controller
+# and gateway configuration
+
+kong:
+  gateway:
+    name: kong
+  gatewayClass:
+    name: kong

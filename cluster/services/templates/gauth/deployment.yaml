@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gauth-service-deployment
+spec:
+  replicas: {{.Values.services.gauth.replicas}}
+  selector:
+    matchLabels:
+      app: {{.Values.services.gauth.name}}
+  template:
+    metadata:
+      labels:
+        app: {{.Values.services.gauth.name}}
+    spec:
+      containers:
+        - name: {{.Values.services.gauth.name}}
+          image: {{.Values.services.gauth.name}}:local
+          imagePullPolicy: {{.Values.services.gauth.imagePullPolicy}}

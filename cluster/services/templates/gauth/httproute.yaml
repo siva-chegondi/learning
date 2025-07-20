@@ -1,0 +1,14 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: gauth-route
+spec:
+  hostnames:
+  - "local.auth"
+  parentRefs:
+    - name: {{.Values.gateway.name}}
+  rules:
+    - backendRefs:
+        - name: {{.Values.services.gauth.name}}
+          kind: Service
+          port: {{.Values.services.gauth.port}}

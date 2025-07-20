@@ -1,0 +1,14 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: payment-route
+spec:
+  parentRefs:
+    - name: {{.Values.gateway.name}}
+  hostnames:
+    - "local.payment"
+  rules:
+    - backendRefs:
+        - name: {{.Values.services.payment.name}}
+          kind: Service
+          port: {{.Values.services.payment.port}}

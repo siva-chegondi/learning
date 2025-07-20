@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proximity-service-deployment
+spec:
+  replicas: {{.Values.services.proximity.replicas}}
+  selector:
+    matchLabels:
+      app: proximity-service
+  template:
+    metadata:
+      labels:
+        app: proximity-service
+    spec:
+      containers:
+        - name: proximity-service
+          image: {{.Values.services.proximity.name}}:local
+          imagePullPolicy: {{.Values.services.proximity.imagePullPolicy}}

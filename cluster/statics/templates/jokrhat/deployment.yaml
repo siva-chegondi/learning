@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jokrhat
+spec:
+  selector:
+    matchLabels:
+      app: jokrhat
+  template:
+    metadata:
+      labels:
+        app: jokrhat
+    spec:
+      containers:
+      - name: jokrhat
+        image: jokrhat # jokrhat ecr image
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "125m"
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: {{ .Values.jokrhatTargetPort }}

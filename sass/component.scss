@@ -1,0 +1,15 @@
+@use 'mixins' as mixins;
+
+body {
+    color: white;
+
+    @include mixins.test {
+        color: black;
+    }
+}
+
+@include mixins.test {
+    .test {
+        background-color: aliceblue;
+    }
+}

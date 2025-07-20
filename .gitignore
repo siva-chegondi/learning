@@ -1,0 +1,9 @@
+**/.idea
+**/*.iml
+java/out/production
+
+# ignoring charts folder
+**/charts
+
+# ignore all .DS_Store filesgi
+**/.DS_Store
